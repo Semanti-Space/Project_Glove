@@ -63,8 +63,6 @@ with mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7) as hands:
                     cv2.putText(frame, "SHIKHARA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(thumb_tip.y - index_tip.y) < 0.1 and abs(thumb_tip.y - middle_tip.y) > 0.1 and abs(thumb_tip.y - ring_tip.y) > 0.1 and abs(thumb_tip.y - pinky_tip.y) > 0.1:
                     cv2.putText(frame, "KAPITTHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-                spread = abs(thumb_tip.y - index_tip.y)
-                print(f"Spread: {abs(index_tip.y - thumb_tip.y):.2f}")
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "EXTENDED" and abs(thumb_base.x - index_tip.x)> 0.10 and abs(thumb_tip.x - index_tip.x) <0.10 and abs(thumb_tip.x - middle_tip.x) < 0.10:
                     cv2.putText(frame, "KATAKAMUKHAHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                 if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED":
@@ -81,20 +79,21 @@ with mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7) as hands:
                     cv2.putText(frame, "SIMHAMUKHAHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(thumb_base.y - ring_tip.y) < 0.1 and abs(thumb_tip.y - index_tip.y) > 0.1:
                     cv2.putText(frame, "KANGULASCHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-                if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "EXTENDED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(thumb_tip.y - ring_tip.y) > 0.1 and abs(thumb_tip.y - index_tip.y) > 0.1 and abs (ring_tip.y - thumb_base.y) > 0.1 and abs (index_base.x - middle_base.x) > 0.1 and abs (middle_base.x - ring_base.x) > 0.1 and abs (ring_base.x - pinky_base.x) > 0.1:
+                if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "EXTENDED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(index_base.x - middle_base.x) > 0.05 and abs(middle_base.x - ring_base.x) > 0.03:
                     cv2.putText(frame, "ALAPADMAKAHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "EXTENDED" and abs(thumb_tip.y - index_tip.y) > 0.1 and abs(thumb_tip.y - middle_tip.y) > 0.1 and abs(thumb_tip.y - ring_tip.y) > 0.1 and abs(thumb_tip.y - pinky_tip.y) > 0.1 and abs(thumb_base.y - thumb_tip.y) > 0.1 and abs(ring_base.y - thumb_tip.y) < 0.1 and abs(middle_tip.y - index_tip.y)< 0.1:
                     cv2.putText(frame, "CHATURA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "EXTENDED" and abs(thumb_tip.x - middle_tip.x) < 0.1 and abs(thumb_base.x - index_tip.x)< 0.10 and abs(thumb_tip.x - index_tip.x) > 0.10:
-                    cv2.putText(frame, "BHRAMAHARA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)         
+                    cv2.putText(frame, "BHRAMAHARA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2) 
+                print(f"thumb_base-index_tip x: {abs(thumb_base.x - index_tip.x):.2f}  thumb_tip-index_tip x: {abs(thumb_tip.x - index_tip.x):.2f}  thumb_tip-middle_tip x: {abs(thumb_tip.x - middle_tip.x):.2f}")        
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "EXTENDED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "EXTENDED" and abs(thumb_tip.y - index_tip.y) < 0.1:
                     cv2.putText(frame, "HAMSASYA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "TUCKED" and abs(thumb_tip.y - index_base.y) < 0.1 and abs(thumb_tip.y - pinky_tip.y) < 0.40:
                     cv2.putText(frame, "HAMSAPAKSHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(thumb_tip.y - index_tip.y) > 0.1 and abs(thumb_tip.y - middle_tip.y) > 0.1 and abs(thumb_tip.y - ring_tip.y) > 0.1 and abs(thumb_tip.y - pinky_tip.y) > 0.1 and abs(thumb_base.y - thumb_tip.y) > 0.1 and abs (index_base.x - middle_base.x) > 0.1 and abs (middle_base.x - ring_base.x) > 0.1 and abs (ring_base.x - pinky_base.x) > 0.1:
-                    cv2.putText(frame, "SAMDAMSHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    cv2.putText(frame, "SAMDAMSHA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(thumb_tip.y - index_tip.y) < 0.1 and abs(thumb_tip.y - middle_tip.y) < 0.1 and abs(thumb_tip.y - ring_tip.y) < 0.1 and abs(thumb_tip.y - pinky_tip.y) < 0.1 and abs(thumb_base.y - thumb_tip.y) > 0.1:
-                    cv2.putText(frame, "MUKULA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,110), 2)
+                    cv2.putText(frame, "MUKULA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 2)
                 if fingers["Index"] == "CURLED" and fingers["Middle"] == "CURLED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "EXTENDED" and abs(index_tip.y - index_base.y) >0.1 and abs(middle_tip.y - index_tip.y) > 0.1:
                     cv2.putText(frame, "TAMRACHURA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (110, 255, 0), 2)
                 if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "EXTENDED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "EXTENDED":
