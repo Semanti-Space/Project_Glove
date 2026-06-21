@@ -18,3 +18,23 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Completed writing the code for all 28 Single Hand Mudras. 
 - Added conditions for each one specifically, trying them out in the camera, and writing out their exact problems
 - Made an error log in my diary for all the overlapping or glitching Mudras which I will fix tomorrow.
+
+## June 10 and June 11 
+- Dedicated to solving logical errors in my code 
+- Wrote down each issue which included overlapping of mudras, not working mudras in a physical diary 
+- Figured out the code and logic behind the wrong code in the diary by myself
+- Main Issue between the 3 - Padmakosha, Samdamsha and Mukula - Due to fingers occluding one another, I could not capture them by the 2D webcam. Led me to use Sensor fusion architecture. 
+- Tried to solve major errors that I faced with Alapadma, And Bhramhara and Mrigashirsha.
+
+## June 12 
+- Official completion of Phase 1 
+- Errors:
+- Depth or Puffiness - Padmakosha, Samdamsha and Mukula
+- Finger spread occlusion - Alapadma 
+- Touch point occlusion - Katakamukhaha 
+
+## Phase 2 - June 20th
+- Connected the ESP32 via the USB cable to the laptop.
+- Had the MPU soldered and connected it to the breadboard. Used the jumper wires to connect it to the ESP32. 
+- Wrote the sketch for ax, ay and az in Arduino IDE and saw the values change as I tilt the breadboard. 
+- Flat: z is big positive; Tilted one way: x is big positive; Tilted the other way: x is big negative
