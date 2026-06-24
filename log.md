@@ -38,3 +38,18 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Had the MPU soldered and connected it to the breadboard. Used the jumper wires to connect it to the ESP32. 
 - Wrote the sketch for ax, ay and az in Arduino IDE and saw the values change as I tilt the breadboard. 
 - Flat: z is big positive; Tilted one way: x is big positive; Tilted the other way: x is big negative
+
+## June 21st and June 22nd 
+- Found the gravitational force of the raw units of x,y and z.
+- Found the observations for ax_g, ay_g and az_g for lying flat, laying to my left, laying to my right. 
+- Learned about the vector decomposition in the MPU. 
+- Learned about the Inertial Reference Frames in Biomechanics - Using gravity (constant) as a inertial reference 
+
+## June 23rd 
+- Finding angles using the gravitational forces of the raw units
+- using atan2  to find the angle.
+- Took observations of the angle while laying flat (z ~90), to my left (x ~ 90) and to my right 
+- Noticed a slight ~2 degree wobble due to the accelerometer. Otherwise Accurate 
+
+## June 24th 
+- Learnt about the Complementary filter. 
