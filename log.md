@@ -53,3 +53,6 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 
 ## June 24th 
 - Learnt about the Complementary filter. 
+- Implemented the formula for gyroscopic measurements
+- Unpredictable angle values and assymmetry in laying to my left and right 
+- Will try to solve the errors tomorrow
