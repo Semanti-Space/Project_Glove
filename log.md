@@ -62,3 +62,10 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Installed the second MPU to the breadboard
 - Connected both MPUs to each other by male to male jumper wires.
 - Learnt about 0x68 and 0x69 I2C Address
+
+
+## June 26th 
+- Implemented the code for finding the angles for both MPU1 and MPU2. 
+- IMU1: X≈-20, Y≈5.7, Z≈87.5
+- IMU2: X≈14, Y≈10.5, Z≈83.6
+
