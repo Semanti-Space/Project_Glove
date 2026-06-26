@@ -11,6 +11,9 @@ unsigned long last_time = 0;
 float filtered_angle_x2 = 0;
 float filtered_angle_y2 = 0;
 float filtered_angle_z2 = 0;
+float wrist_angle_x = 0;
+float wrist_angle_y = 0;
+float wrist_angle_z = 0;
 //note to self unsigned means it will not take negative numbers.
 
 void setup()
@@ -129,6 +132,10 @@ void loop()
     filtered_angle_y2 = 0.98 * (filtered_angle_y2 + gyro_rate_y2 * dt) + 0.02*angle_y2;
     filtered_angle_z2 = 0.98 * (filtered_angle_z2 + gyro_rate_z2 * dt) + 0.02*angle_z2;
 
+    wrist_angle_x = filtered_angle_x2 - filtered_angle_x;
+    wrist_angle_y = filtered_angle_y2 - filtered_angle_y;
+    wrist_angle_z = filtered_angle_z2 - filtered_angle_z;
+
 
     Serial.print("FOR 1ST MPU:");
     Serial.print(" Filtered X:"); Serial.println(filtered_angle_x);
@@ -137,10 +144,16 @@ void loop()
 
 
 
+
     Serial.print("FOR 2ND MPU:");
     Serial.print(" Filtered X:"); Serial.println(filtered_angle_x2);
     Serial.print(" Filtered Y:"); Serial.println(filtered_angle_y2);
     Serial.print(" Filtered Z:"); Serial.println(filtered_angle_z2);
+
+
+    Serial.print(" Wrist Angle X:"); Serial.println(wrist_angle_x);
+    Serial.print(" Wrist Angle Y:"); Serial.println(wrist_angle_y);
+    Serial.print(" Wrist Angle Z:"); Serial.println(wrist_angle_z);
 
 
     //Serial.print("Angle X:"); Serial.print(angle_x);
