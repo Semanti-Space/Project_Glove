@@ -68,4 +68,5 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Implemented the code for finding the angles for both MPU1 and MPU2. 
 - IMU1: X≈-20, Y≈5.7, Z≈87.5
 - IMU2: X≈14, Y≈10.5, Z≈83.6
-
+- Difference between the two to find wrist angle 
+- PHASE 2 COMPLETED 
