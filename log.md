@@ -56,3 +56,9 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Implemented the formula for gyroscopic measurements
 - Unpredictable angle values and assymmetry in laying to my left and right 
 - Will try to solve the errors tomorrow
+
+## June 25th 
+- Solved the errors for Complementary filter by adding the initial values of x into filtered_Angle
+- Installed the second MPU to the breadboard
+- Connected both MPUs to each other by male to male jumper wires.
+- Learnt about 0x68 and 0x69 I2C Address
