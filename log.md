@@ -97,4 +97,11 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Tried layout in new breadboard keeping in mind power rails. 
 - Error solved (somewhat) Will try again tomorrow.
 
+## July 11th 
+- Straight flex sensor range is from 1000 to 3000 
+- Bent flex sensor range is from 2500 to 4000 
+- First flex sensor is working (apart from the noise/jumping of the analog sensor due to the ESP32 Quirk.)
+
+
+
 
