@@ -70,3 +70,12 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - IMU2: X≈14, Y≈10.5, Z≈83.6
 - Difference between the two to find wrist angle 
 - PHASE 2 COMPLETED 
+
+
+## July 1st to July 5th 
+- Understood what flex sensors are and how they work 
+- Learnt about resistance changes when flex sensor is bent or straight 
+- Got the flex sensors soldered to connecting wires 
+- Got the coin vibrator motors soldered to connecting wires 
+
+
