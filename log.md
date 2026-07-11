@@ -91,6 +91,10 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - The readings are a periodic cycle (?) from 0 to 4095. 
 - Value range is not definite or predictable. There is no range
 
-
+## July 10th 
+- Learnt about the error of "floating radio antenna issue"
+- Got the ends of the flex sensors (going inside the breadboard) to half cut male to male jumper wires. 
+- Tried layout in new breadboard keeping in mind power rails. 
+- Error solved (somewhat) Will try again tomorrow.
 
 
