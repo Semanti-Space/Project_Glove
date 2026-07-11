@@ -78,4 +78,12 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Got the flex sensors soldered to connecting wires 
 - Got the coin vibrator motors soldered to connecting wires 
 
+## July 6th to July 8th
+- Learnt about voltage dividers 
+- Understoof Pin34 Analog reader of esp32
+- Learnt about ADC (Analog to Digital Converter)
+- Learnt about the possible values range (0 to 4095) for range of voltage from 0 to 3.3V
+
+
+
 
