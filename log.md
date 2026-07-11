@@ -84,6 +84,13 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - Learnt about ADC (Analog to Digital Converter)
 - Learnt about the possible values range (0 to 4095) for range of voltage from 0 to 3.3V
 
+## July 9th 
+- Corrected the layout of the breadboard 
+- Connected one flex sensor, resistor to the breadboard
+- ERROR - Connection issue. 
+- The readings are a periodic cycle (?) from 0 to 4095. 
+- Value range is not definite or predictable. There is no range
+
 
 
 
