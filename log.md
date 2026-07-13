@@ -103,5 +103,10 @@ If tip.y is equal to or greater than base.y → finger is extended (because tip 
 - First flex sensor is working (apart from the noise/jumping of the analog sensor due to the ESP32)
 - Error with the threshold 
 
+## July 12th 
+- Error with defining threshold
+- No specific range or difference between STRAIGHT and BENT
+- Change the resistance from 10k ohm to 47k ohm.
+
 
 
