@@ -18,11 +18,11 @@ void loop()
   }
   average = c/20;
   Serial.print(" Reading of Pin34 "); Serial.println(average);
-  if (average>1500)
+  if (average>1800)
   {
     Serial.print(" Finger is  "); Serial.println("BENT");
   }
-  if (average<1500)
+  if (average<1650)
   {
     Serial.print(" Finger is "); Serial.println("STRAIGHT");
   }
