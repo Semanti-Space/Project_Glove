@@ -108,7 +108,7 @@ void loop()
   //FLEX SENSOR 5
   for (int n = 1; n<=20; n++)
   {
-    reader5 = analogRead(27);
+    reader5 = analogRead(39);
     c5 = c5 + reader5;
     delay(2);
   }
@@ -116,7 +116,7 @@ void loop()
   //Serial.print(" Reading of Pin27 "); Serial.println(avg5);
   
 
-  Serial.print("F1:"); Serial.print(average);Serial.print(",");Serial.print("F2:"); Serial.print(avg2);Serial.print(",");Serial.print("F3:");Serial.print(avg3);Serial.print(",");Serial.print("F4:");Serial.print(avg4);Serial.println();
+  Serial.print("F1:"); Serial.print(average);Serial.print(",");Serial.print("F2:"); Serial.print(avg2);Serial.print(",");Serial.print("F3:");Serial.print(avg3);Serial.print(",");Serial.print("F4:");Serial.print(avg4);Serial.print(",");Serial.print("F5:");Serial.print(avg5);Serial.println();
 
   
   delay(300);
