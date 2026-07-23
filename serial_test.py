@@ -25,7 +25,7 @@ while True:
             return "UNCLEAR"
     
     s1 = get_finger_state(f1, 1000, 700)
-    s2 = get_finger_state(f2, 400, 200)
+    s2 = get_finger_state(f2, 300, 200)
     s3 = get_finger_state(f3, 400, 200)
     s4 = get_finger_state(f4, 1000, 400)
     s5 = get_finger_state(f5, 1500, 1300)

@@ -1,14 +1,42 @@
 import math
+import serial
 import cv2
 import mediapipe as mp
+
+ser = serial.Serial('COM3', 115200, timeout=1)
 
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 
 cap = cv2.VideoCapture(0)
 
+def get_finger_state(value, threshold_bent, threshold_straight):
+        if value > threshold_bent:
+            return "BENT"
+        elif value < threshold_straight:
+            return "STRAIGHT"
+        else:
+            return "UNCLEAR"
+
 with mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7) as hands:
     while cap.isOpened():
+        ##We need to read the glove data at the start of each frame.
+        try:
+            line = ser.readline().decode('utf-8').strip()
+            parts = line.split(",")
+            if len(parts) == 5:
+                f1 = int(parts[0].split(":")[1])
+                f2 = int(parts[1].split(":")[1])
+                f3 = int(parts[2].split(":")[1])
+                f4 = int(parts[3].split(":")[1])
+                f5 = int(parts[4].split(":")[1])
+                s1 = get_finger_state(f1, 1000, 700)
+                s2 = get_finger_state(f2, 500, 300)
+                s3 = get_finger_state(f3, 400, 200)
+                s4 = get_finger_state(f4, 1000, 400)
+                s5 = get_finger_state(f5, 1500, 1200)
+        except:
+            pass
         ret, frame = cap.read()
         if not ret:
             break
@@ -42,7 +70,11 @@ with mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7) as hands:
                  cv2.putText(frame, f"{finger}: {state}", (10, y_pos), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
                  y_pos += 30
                 if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "EXTENDED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "TUCKED":
-                    cv2.putText(frame, "PATAKA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
+                        ##cv2.putText(frame, "PATAKA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
+                        if s1 == "STRAIGHT" and s2 == "STRAIGHT" and s3 == "STRAIGHT" and s4 == "STRAIGHT" and s5 == "STRAIGHT":
+                            cv2.putText(frame, "PATAKA CORRECT", (10,360), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                        else:
+                            cv2.putText(frame, "PATAKA INCORRECT - STRAIGHTEN FINGERS", (10,360), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "EXTENDED" and fingers["Thumb"] == "TUCKED" and abs(ring_tip.y - thumb_tip.y) > 0.1:
                     cv2.putText(frame, "TRIPATAKA", (10,330), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
                 if fingers["Index"] == "EXTENDED" and fingers["Middle"] == "EXTENDED" and fingers["Ring"] == "CURLED" and fingers["Pinky"] == "CURLED" and fingers["Thumb"] == "TUCKED" and abs(middle_tip.x - index_tip.x) < 0.19:
